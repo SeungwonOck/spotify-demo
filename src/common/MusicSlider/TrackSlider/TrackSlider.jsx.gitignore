@@ -1,0 +1,51 @@
+import React from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import './TrackSlider.style.css'; // 슬라이드 스타일 적용
+import { musicSliderResponsive } from '../../../constants/musicSliderResponsive';
+import { useSeveralTracksQuery } from '../../../hooks/useTrackQuery';
+
+const TracksSlider = ({ trackIds }) => {
+  const { data: tracks, isLoading, isError, error } = useSeveralTracksQuery({ trackIds });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  return (
+    <div className="carousel-container">
+      <h1>Top Tracks</h1>
+       
+      <Carousel
+        showDots={true}
+        responsive={musicSliderResponsive}
+        infinite={true}
+        autoPlay={true}
+        customTransition="all .5"
+        transitionDuration={500}
+        containerClass="carousel-container"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
+      >
+        {tracks.map((track) => (
+          <div className="carousel-item" key={track.id}>
+            <img 
+              src={track.album.images[0]?.url || '/placeholder-image.jpg'} 
+              alt={track.name} 
+            />
+            <h2>{track.name}</h2> {/* 트랙 이름 */}
+            <p>아티스트: {track.artists.map(artist => artist.name).join(', ')}</p> {/* 아티스트 이름 */}
+            <p>앨범: {track.album.name}</p> {/* 앨범 이름 */}
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  );
+};
+
+export default TracksSlider;
