@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './ArtistsSlider.style.css'; // 스타일시트 임포트
-import { musicSliderResponsive } from '../../../../constants/musicSliderResponsive'; // 반응형 설정 임포트
+import { musicSliderResponsive } from '../../../constants/musicSliderResponsive'; // 반응형 설정 임포트
 
 // 숫자 형식을 변환하는 함수 (천 단위 및 백만 단위 변환)
 const formatFollowers = (num) => {

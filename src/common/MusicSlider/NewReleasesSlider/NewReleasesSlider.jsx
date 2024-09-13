@@ -17,7 +17,7 @@ const NewReleasesSlider = () => {
   }
 
   return (
-    <div>
+    <div className="carousel-container">
       <h1>New Releases Albums</h1>
        
       <Carousel

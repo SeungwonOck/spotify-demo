@@ -1,12 +1,12 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { useNewReleasesQuery } from "../../../hooks/useNewReleasesQuery";
-import "./NewReleases.style.css";
+import { useCategoriesQuery } from "../../../hooks/useCategoriesQuery";
+import "./Categories.style.css";
 import { musicSliderResponsive } from '../../../constants/musicSliderResponsive';
 
 const NewReleasesSlider = () => {
-  const { data: albums, isLoading, isError, error } = useNewReleasesQuery();
+  const { data: categories, isLoading, isError, error } = useCategoriesQuery();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -17,8 +17,8 @@ const NewReleasesSlider = () => {
   }
 
   return (
-    <div>
-      <h1>New Releases Albums</h1>
+    <div className="carousel-container">
+      <h1>Categories</h1>
        
       <Carousel
         showDots={true}  // 점을 표시하도록 설정
@@ -32,12 +32,12 @@ const NewReleasesSlider = () => {
         dotListClass="custom-dot-list-style"  // 점 스타일 클래스 적용
         itemClass="carousel-item-padding-40-px"  // 슬라이드 항목 스타일 클래스
       >
-        {albums.map((album) => (
-          <div className="carousel-item" key={album.id}>
-            <img src={album.images[0].url} alt={album.name} />
-            <h2>앨범: {album.name}</h2>
-            <p>가수: {album.artists[0].name}</p>
-            <p>출시일: {album.release_date}</p>
+        {categories.map((category) => (
+          <div className="carousel-item" key={category.id}>
+            <img src={category.icons[0].url} alt={category.name} />
+            <h2>앨범: {category.name}</h2>
+            {/* <p>가수: {category.artists[0].name}</p>
+            <p>출시일: {category.release_date}</p> */}
           </div>
         ))}
       </Carousel>

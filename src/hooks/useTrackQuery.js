@@ -3,26 +3,14 @@ import { api } from "../utils/api/api";
 
 // 아티스트 검색 함수
 const fetchArtists = ({ q }) => {
-  return api().get(`/v1/search?type=artist&q=${q}`); // Spotify Search API 호출
+  return api().get(`/v1/search?type=Track&q=${q}`); // Spotify Search API 호출
 };
 
 // 커스텀 훅: 검색 쿼리를 사용하여 아티스트 정보 가져오기
 export const useArtistsQuery = ({ q }) => {
   return useQuery({
-    queryKey: ["search-artist", q],
+    queryKey: ["search-track", q],
     queryFn: () => fetchArtists({ q }),
-    select: (res) => res.data.artists.items, // 아티스트 목록 선택
+    select: (res) => res.data.artists // 아티스트 목록 선택
   });
 };
-
-
-
-
-
-
-
-
-
-
-
-

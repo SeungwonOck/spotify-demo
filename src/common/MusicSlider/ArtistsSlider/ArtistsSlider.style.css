@@ -3,8 +3,14 @@
 .carousel-container {
     background-color: #000;
     padding: 20px;
+    margin-top: 50px
   }
   
+  .carousel-container h1 {
+    color: white;
+  }
+
+
   .carousel-item {
     display: flex;
     flex-direction: column;
