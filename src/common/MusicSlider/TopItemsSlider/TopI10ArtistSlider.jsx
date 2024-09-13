@@ -23,6 +23,8 @@ const TopTracksSlider = ({ searchQuery }) => {
     return <div>Error: {error.message}</div>;
   }
 
+  console.log ("top10Tracks",top10Tracks)
+
   return (
     <div className="carousel-container">
       <h1>인지도 Top 10 Most Popular top10 Tracks</h1>
