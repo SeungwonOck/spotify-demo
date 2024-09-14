@@ -3,6 +3,7 @@ import React from "react";
 import MusicReleases from "../../common/MusicCard/MusicReleases";
 import MusicArtists from "../../common/MusicCard/MusicArtists";
 import NewReleaseSlides from './components/NewReleaseSlides/NewReleaseSlides';
+import Footer from './components/Footer/Footer';
 
 const HomePage = () => {
  
@@ -13,6 +14,7 @@ const HomePage = () => {
   return (
     <div>
       <NewReleaseSlides/>
+      <Footer/>
     </div>
   ) 
   

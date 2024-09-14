@@ -1,0 +1,30 @@
+.footer-container {
+    width: 100%;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.footer-content {
+    font-size: .9em;
+    font-weight: 600;
+    color: var(--color-green);
+    margin-top: 10px;
+}
+
+.footer-copyright{
+    font-size: .8em;
+    font-weight: 500;
+    color: var(--color-text-vibrant);
+    margin-top: 60px;
+}
+
