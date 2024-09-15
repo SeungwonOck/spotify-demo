@@ -14,7 +14,7 @@ const NotFoundPage = () => {
        <div className="turntable">
         {/* LP 턴테이블을 나타내는 요소 */}
         </div>
-      <h1 className="not-found-title">Oops! Page Not Found!!</h1>
+      <h1 className="not-found-title">Oops! Page Not Found</h1>
       <p className="not-found-description">Sorry, we couldn't find the page you're looking for.</p>
       <button onClick={handleGoHome} className="home-button">Go to Home</button>
     </div>
